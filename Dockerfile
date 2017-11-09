@@ -5,6 +5,8 @@ MAINTAINER Or Yagel <or@soluto.com>
 ENV NODEJS_VERSION=6.11.3 \
     PATH=$PATH:/opt/node/bin
 
+ENV ANDROID_NDK=/opt/android-ndk
+
 WORKDIR "/opt/node"
 
 RUN apt-get update && apt-get install -y curl ca-certificates --no-install-recommends && \
@@ -12,4 +14,5 @@ RUN apt-get update && apt-get install -y curl ca-certificates --no-install-recom
     apt-get install -y git && \
     rm -rf /var/lib/apt/lists/* && \
     npm install npm -g && \
+    npm install -g react-native-cli && \
     apt-get clean
