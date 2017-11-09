@@ -20,13 +20,13 @@ RUN set -x && apt-get update && apt-get install -y curl ca-certificates --no-ins
     mkdir /opt/android-ndk-tmp && \
     mkdir /opt/android-ndk && \
     cd /opt/android-ndk-tmp && wget -q https://dl.google.com/android/repository/android-ndk-r${ANDROID_NDK_VERSION}-linux-x86_64.zip && \
-    unzip -q android-ndk-r${ANDROID_NDK_VERSION}-linux-x86_64.zip && mv ./android-ndk-r${ANDROID_NDK_VERSION} ${ANDROID_NDK} && \
+    unzip -q android-ndk-r${ANDROID_NDK_VERSION}-linux-x86_64.zip && mv ./android-ndk-r${ANDROID_NDK_VERSION}/* ${ANDROID_NDK} && \
     rm -rf /opt/android-ndk-tmp && \
 
     mkdir /opt/android-cmake-tmp && \
     mkdir ${ANDROID_HOME}/cmake && \
     cd /opt/android-cmake-tmp && wget -q https://dl.google.com/android/repository/cmake-${ANDROID_CMAKE_VERSION}-linux-x86_64.zip -O android-cmake.zip && \
-    unzip -q android-cmake.zip -d android-cmake && mv ./android-cmake ${ANDROID_HOME}/cmake && \
+    unzip -q android-cmake.zip -d android-cmake && mv ./android-cmake/* ${ANDROID_HOME}/cmake && \
     rm -rf /opt/android-cmake-tmp \
 
     apt-get clean
