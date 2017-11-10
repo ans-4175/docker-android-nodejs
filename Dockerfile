@@ -12,7 +12,7 @@ WORKDIR "/opt/node"
 
 RUN set -x && dpkg --add-architecture i386 && apt-get update && apt-get install -y curl ca-certificates --no-install-recommends && \
     curl -sL https://nodejs.org/dist/v${NODEJS_VERSION}/node-v${NODEJS_VERSION}-linux-x64.tar.gz | tar xz --strip-components=1 && \
-    apt-get install -y git build-essential libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 && \
+    apt-get install -y git build-essential libc6:i386 libncurses5:i386 libstdc++6:i386 lib32stdc++6 lib32z1 && \
     rm -rf /var/lib/apt/lists/* && \
     npm install npm -g && \
     npm install -g react-native-cli && \
