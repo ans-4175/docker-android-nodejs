@@ -3,7 +3,7 @@ FROM nao20010128nao/android-build:latest
 MAINTAINER Anshorimuslim <ans4175@gmail.com>
 
 ENV NODEJS_VERSION=6.11.3 \
-    ANDROID_NDK_VERSION=13b \
+    ANDROID_NDK_VERSION=10e \
     ANDROID_CMAKE_VERSION=3.6.3155560 \
     ANDROID_NDK=/opt/android-ndk \
     PATH=$PATH:/opt/node/bin:${ANDROID_NDK}:${ANDROID_HOME}/cmake/bin
